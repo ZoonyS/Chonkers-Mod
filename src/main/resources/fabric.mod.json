@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "zoony.chonkers.cat.common.Chonker"
+      "zoony.chonker.cat.common.ChonkerMod"
     ]
   },
   "mixins": [

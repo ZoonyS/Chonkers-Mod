@@ -8,20 +8,17 @@ public class ChonkerEntityModel extends AnimatedGeoModel<ChonkerEntity> {
 
     @Override
     public Identifier getAnimationFileLocation(ChonkerEntity animatable) {
-        // TODO Auto-generated method stub
-        return null;
+        return new Identifier("chonkers", "animations/chonker.animation.json");
     }
 
     @Override
     public Identifier getModelLocation(ChonkerEntity object) {
-        // TODO Auto-generated method stub
-        return null;
+        return new Identifier("chonkers", "models/geo/chonker.geo.json");
     }
 
     @Override
     public Identifier getTextureLocation(ChonkerEntity object) {
-        // TODO Auto-generated method stub
-        return null;
+        return new Identifier("chonkers", "textures/entity/chonker.png");
     }
     
 }
