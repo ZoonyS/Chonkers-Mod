@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "zoony.chonker.cat.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+  ],
+  "client": [
+    "ChonkerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
