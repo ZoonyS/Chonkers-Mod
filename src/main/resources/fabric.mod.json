@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "zoony.chonker.cat.common.ChonkerMod"
+    ],
+    "client": [
+      "zoony.chonker.cat.client.ChonkerClient"
     ]
   },
   "mixins": [
