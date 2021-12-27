@@ -13,7 +13,7 @@ public class ChonkerEntityModel extends AnimatedGeoModel<ChonkerEntity> {
 
     @Override
     public Identifier getModelLocation(ChonkerEntity object) {
-        return new Identifier("chonkers", "models/geo/chonker.geo.json");
+        return new Identifier("chonkers", "geo/chonker.geo.json");
     }
 
     @Override
