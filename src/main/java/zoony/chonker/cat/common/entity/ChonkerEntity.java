@@ -1,5 +1,6 @@
 package zoony.chonker.cat.common.entity;
 
+import zoony.chonker.cat.common.entity.ai.ChonkerTemptGoal;
 import zoony.chonker.cat.common.init.ChonkerModEntity;
 
 import java.util.UUID;
@@ -50,15 +51,16 @@ public class ChonkerEntity extends TameableEntity implements IAnimatable {
     public static DefaultAttributeContainer.Builder createEntityAttributes() {
         return MobEntity.createMobAttributes()
         .add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0D)
-        .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.5D)
+        .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, NORMAL_SPEED)
         .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 32);
     }
 
     protected void initGoals() {
         this.goalSelector.add(1, new SwimGoal(this));
-        this.goalSelector.add(2, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
-        this.goalSelector.add(3, new LookAroundGoal(this));
-        this.goalSelector.add(4, new WanderAroundFarGoal(this, 0.5D));
+        this.goalSelector.add(2, new ChonkerTemptGoal(this, NORMAL_SPEED, TAMING_INGREDIENT, false));
+        this.goalSelector.add(3, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
+        this.goalSelector.add(4, new LookAroundGoal(this));
+        this.goalSelector.add(5, new WanderAroundFarGoal(this, NORMAL_SPEED));
     }
 
     //#region ANIMATION
