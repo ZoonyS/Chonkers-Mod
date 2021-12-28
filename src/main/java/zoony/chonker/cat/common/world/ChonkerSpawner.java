@@ -7,7 +7,6 @@ import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.SpawnRestriction;
-import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
@@ -29,43 +28,11 @@ public class ChonkerSpawner implements Spawner {
     private int ticksUntilNextSpawn;
     EntityType<ChonkerEntity> CHONKER = ChonkerModEntity.CHONKER;
 
-    // public int spawn(ServerWorld world, boolean spawnMonsters, boolean spawnAnimals) {
-    //     if (spawnAnimals && world.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING)) {
-    //         --this.ticksUntilNextSpawn;
-    //         if (this.ticksUntilNextSpawn <= 0) {
-    //             this.ticksUntilNextSpawn = 100;
-    //             Random random = world.random;
-    //             world.getPlayers().forEach(serverPlayerEntity -> {
-    //                 int x = (8 + random.nextInt(32)) * (random.nextBoolean() ? -1 : 1);
-    //                 int y = (random.nextInt(4)) * (random.nextBoolean() ? -1 : 1);
-    //                 int z = (8 + random.nextInt(32)) * (random.nextBoolean() ? -1 : 1);
-    //                 BlockPos blockPos = serverPlayerEntity.getBlockPos().add(x, y, z);
-
-    //                 if (ChonkerEntity.canMobSpawn(CHONKER, world, SpawnReason.NATURAL, blockPos, world.getRandom())) {
-    //                     BlockPos villagePos = world.locateStructure(StructureFeature.VILLAGE, blockPos, 5, false);
-    //                     if (villagePos != null && blockPos.getManhattanDistance(villagePos) <= 300) {
-    //                         List<VillagerEntity> villagersNearby = world.getEntitiesByType(EntityType.VILLAGER, new Box(blockPos.getX() - SPAWN_RADIUS, blockPos.getY() - SPAWN_RADIUS, blockPos.getZ() - SPAWN_RADIUS, blockPos.getX() + SPAWN_RADIUS, blockPos.getY() + SPAWN_RADIUS, blockPos.getZ() + SPAWN_RADIUS), villagerEntity -> true);
-
-    //                         if (villagersNearby.isEmpty() && world.isRegionLoaded(blockPos.getX() - 10, blockPos.getY() - 10, blockPos.getZ() - 10, blockPos.getX() + 10, blockPos.getY() + 10, blockPos.getZ() + 10)) {
-    //                             if (SpawnHelper.canSpawn(SpawnRestriction.Location.ON_GROUND, world, blockPos, CHONKER)) {
-    //                                 for (int i = 0; i <= random.nextInt(5); i++) {
-    //                                     this.spawnInHouse(world, blockPos);
-    //                                 }
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-    //             });
-    //         }
-    //     }
-    //     return 0;
-    // }
-
     public int spawn(ServerWorld world, boolean spawnMonsters, boolean spawnAnimals) {
         if (spawnAnimals && world.getGameRules().getBoolean(GameRules.DO_MOB_SPAWNING)) {
             --this.ticksUntilNextSpawn;
             if (this.ticksUntilNextSpawn <= 0) {
-                this.ticksUntilNextSpawn = 10;
+                this.ticksUntilNextSpawn = 1;
                 Random random = world.random;
                 world.getPlayers().forEach(serverPlayerEntity -> {
                     int x = (8 + random.nextInt(32)) * (random.nextBoolean() ? -1 : 1);

@@ -37,11 +37,12 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class ChonkerEntity extends TameableEntity implements IAnimatable {
-    public static final double CROUCHING_SPEED = 0.6;
-    public static final double NORMAL_SPEED = 0.8;
-    public static final double SPRINTING_SPEED = 1.33;
+    public static final double CROUCHING_SPEED = 0.5;
+    public static final double NORMAL_SPEED = 0.7;
+    public static final double SPRINTING_SPEED = 1;
     private static final Ingredient TAMING_INGREDIENT = Ingredient.ofItems(Items.COD, Items.SALMON);
     
+    private ChonkerTemptGoal temptGoal;
     private final AnimationFactory factory = new AnimationFactory(this);
 
     public ChonkerEntity(EntityType<? extends TameableEntity> type, World world) {
@@ -56,14 +57,27 @@ public class ChonkerEntity extends TameableEntity implements IAnimatable {
     }
 
     protected void initGoals() {
+        this.temptGoal =  new ChonkerTemptGoal(this, CROUCHING_SPEED, TAMING_INGREDIENT, false);
         this.goalSelector.add(1, new SwimGoal(this));
-        this.goalSelector.add(2, new ChonkerTemptGoal(this, NORMAL_SPEED, TAMING_INGREDIENT, false));
+        this.goalSelector.add(2, this.temptGoal);
         this.goalSelector.add(3, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
         this.goalSelector.add(4, new LookAroundGoal(this));
         this.goalSelector.add(5, new WanderAroundFarGoal(this, NORMAL_SPEED));
     }
 
-    //#region ANIMATION
+    //#region [TICK]
+
+    @Override
+    public void tick() {
+        super.tick();
+        if (this.temptGoal != null && this.temptGoal.isActive() && !this.isTamed() && this.age % 100 == 0) {
+            this.playSound(SoundEvents.ENTITY_CAT_BEG_FOR_FOOD, 1.0f, 0.2f);
+        }    
+    }
+
+    //#endregion
+
+    //#region [ANIMATION]
 
     private <E extends IAnimatable> PlayState Predicate(AnimationEvent<E> event) {
         return PlayState.CONTINUE;
@@ -81,7 +95,7 @@ public class ChonkerEntity extends TameableEntity implements IAnimatable {
 
     //#endregion
 
-    //#region BREEDING
+    //#region [BREEDING]
 
     @Override
     public boolean canBreedWith(AnimalEntity other) {
@@ -110,7 +124,7 @@ public class ChonkerEntity extends TameableEntity implements IAnimatable {
 
     //#endregion
 
-    //#region SOUND EVENTS
+    //#region [SOUND EVENTS]
 
     @Override
     @Nullable
@@ -151,7 +165,7 @@ public class ChonkerEntity extends TameableEntity implements IAnimatable {
 
     //#endregion
 
-    //#region TESTS
+    //#region [BOOLS]
 
     public boolean isBreedingItem(ItemStack stack) {
         return TAMING_INGREDIENT.test(stack);
