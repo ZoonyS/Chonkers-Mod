@@ -1,8 +1,8 @@
 package zoony.chonker.cat.client.model.entity;
 
+import zoony.chonker.cat.common.entity.ChonkerEntity;
 import net.minecraft.util.Identifier;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
-import zoony.chonker.cat.common.entity.ChonkerEntity;
 
 public class ChonkerEntityModel extends AnimatedGeoModel<ChonkerEntity> {
 
