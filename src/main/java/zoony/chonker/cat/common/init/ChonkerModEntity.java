@@ -1,5 +1,7 @@
 package zoony.chonker.cat.common.init;
 
+import zoony.chonker.cat.common.entity.ChonkerEntity;
+
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
@@ -7,7 +9,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import zoony.chonker.cat.common.entity.ChonkerEntity;
+
 
 public class ChonkerModEntity {
     public static EntityType<ChonkerEntity> CHONKER;

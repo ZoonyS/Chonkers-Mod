@@ -2,6 +2,7 @@ package zoony.chonker.cat.common;
 
 import net.fabricmc.api.ModInitializer;
 import software.bernie.geckolib3.GeckoLib;
+import zoony.chonker.cat.common.init.ChonkerModBlock;
 import zoony.chonker.cat.common.init.ChonkerModEntity;
 import zoony.chonker.cat.common.init.ChonkerModItem;
 import zoony.chonker.cat.common.init.ChonkerModSpawner;
@@ -20,6 +21,7 @@ public class ChonkerMod implements ModInitializer {
 		GeckoLib.initialize();
 		ChonkerModEntity.init();
 		ChonkerModItem.init();
+		ChonkerModBlock.init();
 		ChonkerModSpawner.init();
 	}
 

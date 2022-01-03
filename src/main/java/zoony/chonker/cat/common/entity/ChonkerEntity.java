@@ -174,4 +174,3 @@ public class ChonkerEntity extends TameableEntity implements IAnimatable {
     //#endregion
 
 }
-

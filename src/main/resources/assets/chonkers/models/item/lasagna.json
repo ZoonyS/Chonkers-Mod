@@ -1,0 +1,6 @@
+{
+    "parent": "chonker:item/generated",
+    "textures": {
+      "layer0": "chonker:item/lasagna"
+    }
+  }
