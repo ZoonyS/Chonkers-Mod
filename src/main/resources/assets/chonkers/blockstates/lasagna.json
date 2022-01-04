@@ -1,25 +1,25 @@
 {
     "variants": {
       "bites=0": {
-        "model": "chonker:block/lasagna_block"
+        "model": "chonkers:block/lasagna"
       },
       "bites=1": {
-        "model": "chonker:block/lasagna_slice1"
+        "model": "chonkers:block/lasagna_slice1"
       },
       "bites=2": {
-        "model": "chonker:block/lasagna_slice2"
+        "model": "chonkers:block/lasagna_slice2"
       },
       "bites=3": {
-        "model": "chonker:block/lasagna_slice3"
+        "model": "chonkers:block/lasagna_slice3"
       },
       "bites=4": {
-        "model": "chonker:block/lasagna_slice4"
+        "model": "chonkers:block/lasagna_slice4"
       },
       "bites=5": {
-        "model": "chonker:block/lasagna_slice5"
+        "model": "chonkers:block/lasagna_slice5"
       },
       "bites=6": {
-        "model": "chonker:block/lasagna_slice6"
+        "model": "chonkers:block/lasagna_slice6"
       }
     }
   }

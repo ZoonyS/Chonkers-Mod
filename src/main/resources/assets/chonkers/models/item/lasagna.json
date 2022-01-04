@@ -1,6 +1,6 @@
 {
-    "parent": "chonker:item/generated",
+    "parent": "minecraft:item/generated",
     "textures": {
-      "layer0": "chonker:item/lasagna"
+      "layer0": "chonkers:item/lasagna"
     }
   }

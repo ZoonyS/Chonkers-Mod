@@ -17,8 +17,8 @@ public class ChonkerModBlock {
     public static BlockItem LASAGNA_BLOCK_ITEM;
 
     public static void init() {
-        LASAGNA_BLOCK =  Registry.register(Registry.BLOCK, new Identifier("chonker", "lasagna"), new LasagnaBlock(FabricBlockSettings.of(Material.CAKE).strength(1.0F, 1.0F).sounds(BlockSoundGroup.MOSS_CARPET)));
-        LASAGNA_BLOCK_ITEM = Registry.register(Registry.ITEM, new Identifier("chonker", "lasagna"), new BlockItem(LASAGNA_BLOCK, new Item.Settings().group(ItemGroup.FOOD)));
+        LASAGNA_BLOCK =  Registry.register(Registry.BLOCK, new Identifier("chonkers", "lasagna"), new LasagnaBlock(FabricBlockSettings.of(Material.CAKE).strength(1.0F, 1.0F).sounds(BlockSoundGroup.MOSS_CARPET)));
+        LASAGNA_BLOCK_ITEM = Registry.register(Registry.ITEM, new Identifier("chonkers", "lasagna"), new BlockItem(LASAGNA_BLOCK, new Item.Settings().group(ItemGroup.FOOD)));
     }
 
 }
