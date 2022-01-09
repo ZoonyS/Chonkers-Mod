@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "MMM",
+        "BEB",
+        "WWW"
+    ],
+    "key": {
+        "M": {
+            "item": "minecraft:milk_bucket"
+        },
+        "B": {
+            "item": "minecraft:cooked_beef"
+        },
+        "E": {
+             "item": "minecraft:egg"
+        },
+        "W": {
+            "item": "minecraft:wheat"
+        }
+    },
+    "result": {
+        "item": "chonkers:lasagna",
+        "count": 1
+    }
+}
