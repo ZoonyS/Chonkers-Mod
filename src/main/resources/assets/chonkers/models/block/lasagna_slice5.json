@@ -1,10 +1,10 @@
 {
     "textures": {
-        "particle": "block/lasagna_side",
-        "bottom": "block/lasagna_bottom",
-        "top": "block/lasagna_top",
-        "side": "block/lasagna_side",
-        "inside": "block/lasagna_inner"
+        "particle": "chonkers:block/lasagna_side",
+        "bottom": "chonkers:block/lasagna_bottom",
+        "top": "chonkers:block/lasagna_top",
+        "side": "chonkers:block/lasagna_side",
+        "inside": "chonkers:block/lasagna_inner"
     },
     "elements": [
         {   "from": [ 11, 0, 1 ],

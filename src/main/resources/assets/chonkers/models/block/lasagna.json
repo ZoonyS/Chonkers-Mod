@@ -1,9 +1,9 @@
 {
     "textures": {
-        "particle": "block/lasagna_side",
-        "bottom": "block/lasagna_bottom",
-        "top": "block/lasagna_top",
-        "side": "block/lasagna_side"
+        "particle": "chonkers:block/lasagna_side",
+        "bottom": "chonkers:block/lasagna_bottom",
+        "top": "chonkers:block/lasagna_top",
+        "side": "chonkers:block/lasagna_side"
     },
     "elements": [
         {   "from": [ 1, 0, 1 ],
