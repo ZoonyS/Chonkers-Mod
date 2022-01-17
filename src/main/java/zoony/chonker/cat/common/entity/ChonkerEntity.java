@@ -1,6 +1,7 @@
 package zoony.chonker.cat.common.entity;
 
 import zoony.chonker.cat.common.entity.ai.ChonkerTemptGoal;
+import zoony.chonker.cat.common.entity.ai.GoToLasagnaAndEatGoal;
 import zoony.chonker.cat.common.init.ChonkerModEntity;
 
 import java.util.UUID;
@@ -60,9 +61,10 @@ public class ChonkerEntity extends TameableEntity implements IAnimatable {
         this.temptGoal =  new ChonkerTemptGoal(this, CROUCHING_SPEED, TAMING_INGREDIENT, false);
         this.goalSelector.add(1, new SwimGoal(this));
         this.goalSelector.add(2, this.temptGoal);
-        this.goalSelector.add(3, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
-        this.goalSelector.add(4, new LookAroundGoal(this));
-        this.goalSelector.add(5, new WanderAroundFarGoal(this, NORMAL_SPEED));
+        this.goalSelector.add(3, new GoToLasagnaAndEatGoal(this, NORMAL_SPEED, 8));
+        this.goalSelector.add(4, new LookAtEntityGoal(this, PlayerEntity.class, 8.0F));
+        this.goalSelector.add(5, new LookAroundGoal(this));
+        this.goalSelector.add(6, new WanderAroundFarGoal(this, NORMAL_SPEED));
     }
 
     //#region [TICK]
@@ -169,6 +171,13 @@ public class ChonkerEntity extends TameableEntity implements IAnimatable {
 
     public boolean isBreedingItem(ItemStack stack) {
         return TAMING_INGREDIENT.test(stack);
+    }
+
+    public boolean isInSleepingPose() {
+        return false;
+    }
+
+    public void setInSleepingPose(boolean b) {
     }
 
     //#endregion
